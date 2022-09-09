@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <style>
+        body {
+            width: 100%;
+            font-size: 8px !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        table tr td {
+            border: 1px solid;
+            line-height: 2;
+        }
+
+            table tr td label {
+                text-align: left;
+            }
+
+            table tr td input[type="text"] {
+                float: right;
+                border: none;
+                width: 90%;
+                height: 25px;
+                font-size: 5px !important;
+                padding: 2px 10px;
+            }
+
+        .matrixes input[type=text] {
+            float: right;
+            border: none;
+            width: 90%;
+            height: 20px;
+            line-height: 1 !important;
+            font-size: 10px !important;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        .diagonal span {
+            display: -webkit-box;
+            line-height: 0.8;
+        }
+
+        h5 {
+            background: #5c5c5c;
+            display: inline-block;
+            border-radius: 50px;
+            padding: 5px 20px;
+            color: #fff;
+        }
+
+        input#checkboxNoLabel {
+            font-size: 23px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .display-flex {
+            display: flex;
+        }
+
+        .display-inline-flex {
+            display: inline-flex;
+        }
+
+        .turnaround {
+            padding-bottom: 10px;
+            padding-left: 10px;
+            width: 100%;
+            display: inline-flex;
+        }
+
+            .turnaround input[type=checkbox] {
+                margin-top: 1px;
+                margin-right: 10px;
+                border: 2px solid;
+                font-size: 25px;
+                width: 25px;
+            }
+
+            .turnaround .rush {
+                line-height: 1;
+                font-weight: bold;
+            }
+
+                .turnaround .rush p {
+                    font-size: 7px;
+                    font-weight: normal;
+                }
+
+        .width20 {
+            width: 20%;
+        }
+
+        .width25 {
+            width: 25%;
+        }
+
+        .width30 {
+            width: 30%;
+        }
+
+
+        .rotate-180 {
+            width: 600%;
+            margin-right: -100px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col text-center border-radius-50 background-color-eee">
+            <h5>Chain Of Custody Record</h5>
+        </div>
+    </div>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="12">
+                        <table width="100%">
+                            <tr>
+                                <td width="50%" style="border:none; border-right:1px solid">CLIENT NAME:<input type="text" name="ClientName" value="" /></td>
+                                <td width="50%" style="border: none; border-left: 1px solid">CLIENT CONTACT: <input type="text" name="Project" value="" /></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td rowspan="5" class="text-center"><span style="writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 600;">TEST PARAMETERS</span></td>
+                    <td rowspan="7"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">Metals: Al, Cu, Fe, Pb, Zn</span></td>
+                    <td rowspan="7"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">COD</span></td>
+                    <td rowspan="7"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">TSS</span></td>
+                    <td rowspan="7"></td>
+                    <td rowspan="7"></td>
+                    <td rowspan="7"></td>
+                    <td rowspan="7"></td>
+                    <td rowspan="7"></td>
+                    <td colspan="4" rowspan="5">
+                        <img src="../Content/images/CoC-LabUse.jpg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        <table width="100%">
+                            <tr>
+                                <td width="50%" style="border:none; border-right:1px solid">CLIENT ADDRESS:<input type="text" name="Address1" value="" /></td>
+                                <td width="50%" style="border: none; border-left: 1px solid">CLIENT PHONE: <input type="text" name="Phone" value="" /> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        <table width="100%">
+                            <tr>
+                                <td width="50%" style="border:none; border-right:1px solid">CITY, STATE, ZIP: <input type="text" name="Address2" value="" /></td>
+                                <td width="50%" style="border: none; border-left: 1px solid">EMAIL: <input type="text" name="Email" value="" /> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        <table width="100%">
+                            <tr>
+                                <td width="28%" style="border:none; border-right:1px solid">P.O. NO.: <input type="text" name="PO_No" value="" /></td>
+                                <td width="36%" style="border: none; border-left: 1px solid">FAX: <input type="text" name="Fax" value="" /> </td>
+                                <td width="36%" style="border: none; border-left: 1px solid">QUOTE NO.: <input type="text" name="QuoteNo" value="" /> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="12">
+                        <table width="100%">
+                            <tr>
+                                <td width="28%" style="border:none; border-right:1px solid"> PROJECT NO.: <input type="text" name="ProjectNo" value="" style="width:54%" /> </td>
+                                <td width="36%" style="border: none; border-left: 1px solid">PROJECT NAME: <input type="text" name="ProjectName" value="" style="width:58%" /> </td>
+                                <td width="36%" style="border: none; border-left: 1px solid">SAMPLER'S NAME: <input type="text" name="SamplerName" value="" style="width:52%" /> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="text-center">
+                    <td colspan="4">Sample Collection</td>
+                    <td width="25%" colspan="4" rowspan="2">Sample Description</td>
+                    <td colspan="5">No. / Type Containers<sup>2</sup></td>
+                    <td rowspan="2"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">DRY WT.</span></td>
+                    <td rowspan="2"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">TRRP</span></td>
+                    <td rowspan="2"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">HOLD<sup style="top: 0.2em; left: 0.4em;">4</sup></span></td>
+                    <td rowspan="2" style="text-align:center">Lab ID</td>
+                </tr>
+                <tr class="text-center">
+                    <td>Date <p style="font-size:8px;">Ex. mm/dd/yyyy</p></td>
+                    <td>Time <p style="font-size:8px;">Ex. hh:mm</p></td>
+                    <td><span>(C)omp</span><p style="border-top:1px solid">(G)rab</p></td>
+                    <td>Matrix<sup>1</sup></td>
+
+                    <td>VOA</td>
+                    <td>A/G<p style=" line-height: 0.7;">1 LT.</p></td>
+                    <td>4 OZ.</td>
+                    <td>P/O</td>
+                    <td>
+                        <div class="diagonal">
+                            <span>P</span>
+                            <span style="margin-left: 8px;">R<sup style="margin-left: 5px;">3</sup></span>
+                            <span style="margin-left: 18px;">E</span>
+                            <span style="margin-left: 24px;">S</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="0" class="matrixes">
+                    <td><input type="text" name="name1" value="01" tabindex="1" /></td>
+                    <td><input type="text" name="name2" value="02" tabindex="2" /></td>
+                    <td><input type="text" name="name3" value="03" tabindex="3" /></td>
+                    <td><input type="text" name="name4" value="04" tabindex="4" /></td>
+                    <td colspan="4"><input name="name5" type="text" tabindex="5" value="05" /></td>
+                    <td><input type="text" name="name6" value="06" tabindex="6" /></td>
+                    <td><input type="text" name="name7" value="07" tabindex="7" /></td>
+                    <td><input type="text" name="name8" value="08" tabindex="8" /></td>
+                    <td><input type="text" name="name9" value="09" tabindex="9" /></td>
+                    <td><input type="text" name="name10" value="10" tabindex="10" /></td>
+
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel1" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel2" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel3" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel4" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel5" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel6" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel7" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel8" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel9" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel10" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel10" value="" /></td>
+                    <td class="text-center"><input type="text" name="name11" value="" tabindex="11" /></td>
+                </tr>
+                <tr id="1" class="matrixes">
+                    <td><input type="text" name="name11" value="" tabindex="12"/></td>
+                    <td><input type="text" name="name12" value=""/></td>
+                    <td><input type="text" name="name13" value="" /></td>
+                    <td><input type="text" name="name14" value="" /></td>
+                    <td colspan="4"><input type="text" name="name15" value="" /></td>
+                    <td><input type="text" name="name16" value="" /></td>
+                    <td><input type="text" name="name17" value="" /></td>
+                    <td><input type="text" name="name18" value="" /></td>
+                    <td><input type="text" name="name19" value="" /></td>
+                    <td><input type="text" name="name20" value="" /></td>
+
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel12" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel13" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel14" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel15" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel16" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel17" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel18" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel19" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel20" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel21" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel22" value="" /></td>
+                    <td><input type="text" name="name-2" value="" /></td>
+                </tr>
+                <tr id="2" class="matrixes">
+                    <td><input type="text" name="name21" value="" /></td>
+                    <td><input type="text" name="name22" value="" /></td>
+                    <td><input type="text" name="name23" value="" /></td>
+                    <td><input type="text" name="name24" value="" /></td>
+                    <td colspan="4"><input type="text" name="name25" value="" /></td>
+                    <td><input type="text" name="name26" value="" /></td>
+                    <td><input type="text" name="name27" value="" /></td>
+                    <td><input type="text" name="name28" value="" /></td>
+                    <td><input type="text" name="name29" value="" /></td>
+                    <td><input type="text" name="name30" value="" /></td>
+
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel23" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel24" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel25" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel26" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel27" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel28" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel29" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel30" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel31" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel32" value="" /></td>
+                    <td class="text-center"><input type="checkbox" name="checkboxNoLabel33" value="" /></td>
+                    <td><input type="text" name="name-3" value="" /></td>
+                </tr>
+                <tr id="3" class="matrixes">
+                    <td><input type="text" name="name31" value="" /></td>
+                    <td><input type="text" name="name32" value="" /></td>
+                    <td><input type="text" name="name33" value="" /></td>
+                    <td><input type="text" name="name34" value="" /></td>
+                    <td colspan="4"><input name="name35" type="text" value="" /></td>
+                    <td><input type="text" name="name36" value="" /></td>
+                    <td><input type="text" name="name37" value="" /></td>
+                    <td><input type="text" name="name38" value="" /></td>
+                    <td><input type="text" name="name39" value="" /></td>
+                    <td><input type="text" name="name40" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel34" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel35" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel36" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel37" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel38" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel39" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel40" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel41" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel42" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel43" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel44" value="" /></td>
+                    <td><input type="text" name="name-4" value="" /></td>
+                </tr>
+                <tr id="4" class="matrixes">
+                    <td><input type="text" name="name41" value="" /></td>
+                    <td><input type="text" name="name42" value="" /></td>
+                    <td><input type="text" name="name43" value="" /></td>
+                    <td><input type="text" name="name44" value="" /></td>
+                    <td colspan="4"><input name="name45" type="text" value="" /></td>
+                    <td><input type="text" name="name46" value="" /></td>
+                    <td><input type="text" name="name47" value="" /></td>
+                    <td><input type="text" name="name48" value="" /></td>
+                    <td><input type="text" name="name49" value="" /></td>
+                    <td><input type="text" name="name50" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel45" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel46" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel47" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel48" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel49" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel50" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel51" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel52" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel53" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel54" value="" /></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" name="checkboxNoLabel55" value="" /></td>
+                    <td><input type="text" name="name-5" value="" /></td>
+                </tr>
+                <!--<tr id="5" class="matrixes">
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td colspan="4"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>
+                <tr id="6" class="matrixes">
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td colspan="4"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>
+                <tr id="7" class="matrixes">
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td colspan="4"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>
+                <tr id="8" class="matrixes">
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td colspan="4"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>
+                <tr id="9" class="matrixes">
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td colspan="4"><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+                    <td><input type="text" name="name" value="" /></td>
+
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td class="text-center"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>-->
+                <!-- Turnaround time -->
+                <tr>
+                    <td colspan="15">
+                        <div class="turnaround">
+                            <div class="col-3 width25">
+                                <label><strong>TURNAROUND TIME:</strong></label>
+                                <div class="display-flex">
+                                    <input class="form-check-input" type="checkbox" value="" />
+                                    <div class="rush">
+                                        STANDARD
+                                        <p>5 Business Days</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 width20">
+                                <label>&nbsp;</label>
+                                <div class="display-flex">
+                                    <input class="form-check-input" type="checkbox" value="" />
+                                    <div class="rush">
+                                        50% RUSH
+                                        <p>3 Business Days</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 width25">
+                                <label>&nbsp;</label>
+                                <div class="display-flex">
+                                    <input class="form-check-input" type="checkbox" value="" />
+                                    <div class="rush">
+                                        100% RUSH
+                                        <p>1 Business Day/ASAP<sup>*</sup></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 width30">
+                                <label>&nbsp;</label>
+                                <div class="display-flex">
+                                    <input class="form-check-input" type="checkbox" value="" />
+                                    <div class="rush">
+                                        E.R. 300% RUSH
+                                        <p>Same Day/ASAP<sup>*</sup></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td colspan="10" style="font-size:6px">
+                        1. MATRIX: WW-Wastewater; W-Water; S-Soil; SD-Solid; L-Liquid; A-Airbag; C-Charcoal Tube; <br />
+                        2.CONTAINERS: VOA-40ml vial; A/G-Amber or Glass 1 Liter; 4 oz-Glass Wide Mouth; P/O-Plastic or Other <br />
+                        3.PRES.: 1-None; 2-1:1HNO ; 3-1:1 HCL; 4-1:1 H SO ; 5-NaOH; 6-Ice; 7-Other_______________________ <br />
+                        SL-Sludge; O-Oil </br>
+                        4.HOLD: Lab will hold samples for 30 (thirty) days<br />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
